@@ -1,0 +1,12 @@
+.logo {
+  padding-top: 25px;
+  margin: 0 auto;
+  max-width: 1224px;
+}
+.logo__img {
+  margin-left: 20px;
+  background: url('img/saristoch-logo.svg') no-repeat;
+  background-size: cover;
+  width: 130px;
+  height: 150px;
+}

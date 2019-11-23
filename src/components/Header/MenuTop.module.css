@@ -1,0 +1,31 @@
+.menu_top__list {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu_top__item {
+  margin: 0 10px;
+  padding: 5px 15px;
+  background-color: #1654a7;
+  border-radius: 20px;
+}
+
+.menu_top__item:hover {
+  background-color: #4A83D3;
+}
+
+.menu_top__item:active {
+  background-color: #A58304;
+}
+
+.active {
+  margin: 0 10px;
+  padding: 5px 15px;
+  background-color: #07326D;
+  border-radius: 20px;
+}
+
+.menu_top__link {
+  color: white;
+  text-decoration: none;
+}
