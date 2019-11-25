@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Navbar.module.css';
+import {NavLink} from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -7,9 +8,9 @@ const Navbar = () => {
       <div className={s.needs}>важно</div>
       <div className={s.navbar__list}>
         <ul>
-          <li className={s.navbar__item}><a href="#" className={s.navbar__link}>Аналитика</a></li>
-          <li className={s.navbar__item}><a href="#" className={s.navbar__link}>Рекомендации муниципальным органам власти, лидерам национально-культурных организаций</a></li>
-          <li className={s.navbar__item}><a href="#" className={s.navbar__link}>Законодательные акты. Комментарии. Правоприменительная практика</a></li>
+          <li className={s.navbar__item}><NavLink to="/analytics" className={s.navbar__link} activeClassName={s.active}>Аналитика</NavLink></li>
+          <li className={s.navbar__item}><NavLink to="/recommendations" className={s.navbar__link} activeClassName={s.active}>Рекомендации муниципальным органам власти, лидерам национально-культурных организаций</NavLink></li>
+          <li className={s.navbar__item}><NavLink to="/law" className={s.navbar__link} activeClassName={s.active}>Законодательные акты. Комментарии. Правоприменительная практика</NavLink></li>
         </ul>
       </div>
     </div>
