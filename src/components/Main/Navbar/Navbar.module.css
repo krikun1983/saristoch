@@ -1,6 +1,6 @@
 .navbar {
   width: 23rem;
-  background-color: #7599D2;
+  background-color: rgb(179, 206, 248);
 }
 
 .needs {
@@ -20,6 +20,7 @@
 .navbar__item {
   cursor: pointer;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid white;
   list-style-type: none;
 }
