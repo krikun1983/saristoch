@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Content.module.css';
-import News from './News/News';
+import News from './News/New';
 
 const Content = () => {
   return (

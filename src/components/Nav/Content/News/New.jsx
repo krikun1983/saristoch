@@ -1,8 +1,8 @@
 import React from 'react';
-import s from './News.module.css';
+import s from './New.module.css';
 import Avatar from './img/avatar.jpg';
 
-const News = (props) => {
+const New = (props) => {
   return (
       <div className={s.content__news}>
         <img src={Avatar} className={s.content__img}/>
@@ -21,4 +21,4 @@ const News = (props) => {
   );
 }
 
-export default News;
+export default New;
