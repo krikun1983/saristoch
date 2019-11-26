@@ -5,12 +5,12 @@ import Content from './Content/Content';
 
 const Main = () => {
   return (
-    <main className={s.main}>
-      <div className={s.main__block}>
-        <Navbar />
-        <Content />
-      </div>
-    </main>
+      <main className={s.main}>
+        <div className={s.main__block}>
+          {/* <Navbar /> */}
+          {/* <Content /> */}
+        </div>
+      </main>
   );
 }
 

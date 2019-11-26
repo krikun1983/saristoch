@@ -5,6 +5,12 @@
 }
 
 .menu_top__item {
+  cursor: pointer; 
+}
+
+.menu_top__link {
+  color: white;
+  text-decoration: none;
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
   background-color: #1654a7;
@@ -12,22 +18,17 @@
   cursor: pointer;
 }
 
-.menu_top__item:hover {
+.menu_top__link:hover {
   background-color: #4A83D3;
 }
 
-.menu_top__item:active {
+.menu_top__link:active {
   background-color: #A58304;
 }
 
-/* .active {
+.menu_top__item .active {
   margin: 0 1rem;
   padding: 0.5rem 1.5rem;
-  background-color: #07326D;
+  background-color: #A58304;
   border-radius: 2rem;
-} */
-
-.menu_top__link {
-  color: white;
-  text-decoration: none;
 }

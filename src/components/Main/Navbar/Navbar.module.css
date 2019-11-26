@@ -35,5 +35,9 @@
 }
 
 .navbar__link:active {
-  color: #FACE1C;
+  color: #A58304;
+}
+
+.active {
+  color: #A58304;
 }
