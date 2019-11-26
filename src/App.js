@@ -12,10 +12,10 @@ import Main from './components/Nav/Main';
 import News from './components/Nav/News';
 import Activity from './components/Nav/Activity';
 import OurFilms from './components/Nav/OurFilms';
-import QuestionAnswer from './components/Nav/QuestionAnswer';
+import QuestionAnswer from './components/Main/Navbar/QuestionAnswer';
 import Gallery from './components/Nav/Gallery';
 import Regions from './components/Nav/Regions';
-import Analytics from './components/Main/Navbar/Analytics';
+import Analytics from './components/Nav/Analytics';
 import Law from './components/Main/Navbar/Law';
 import Recommendations from './components/Main/Navbar/Recommendations';
 import Footer from './components/Footer/Footer';
@@ -39,12 +39,12 @@ const App = (props) => {
               <Route exact path="/" component={Main} />
               <Route path='/news' component={News} />
               <Route path='/activity' component={Activity} />
+              <Route path='/analytics' component={Analytics} />
               <Route path='/ourFilms' component={OurFilms} />
-              <Route path='/questionAnswer' component={QuestionAnswer} />
               <Route path='/gallery' component={Gallery} />
               <Route path='/regions' component={Regions} />
 
-              <Route path='/analytics' component={Analytics} />
+              <Route path='/questionAnswer' component={QuestionAnswer} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />
             </div>
