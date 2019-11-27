@@ -30,8 +30,10 @@ const App = (props) => {
         <Grant />
         <main className={s.main}>
           <div className={s.main__block}>
-            <Navbar />
-            <div className='content'>
+            <div className={s.main__navbar}>
+              <Navbar />
+            </div>
+            <div className={s.main__content}>
               <Route path='/aboutUs' component={AboutUs} />
               <Route path='/aboutProject' component={AboutProject} />
               <Route path='/reports' component={Reports} />
