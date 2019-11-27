@@ -1,8 +1,15 @@
 import React from 'react';
 import s from './News.module.css';
-import New from './Content/News/New';
+import New from '../../Main/Content/News/New';
+import {NavLink} from 'react-router-dom';
 
-const News = () => {
+// const MewItem = (props) {
+//   return (
+
+//   );
+// }
+
+const News = (props) => {
   return (
     <div className={s.content}>
       <h3 className={s.h3}>Новости</h3>

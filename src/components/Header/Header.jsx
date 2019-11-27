@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Header.module.css';
-import MenuTop from './MenuTop';
+import MenuTop from './MenuTop/MenuTop';
 import Logo from './Logo';
 import Maps from './Maps';
 
