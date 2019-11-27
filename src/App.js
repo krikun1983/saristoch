@@ -22,6 +22,7 @@ import Footer from './components/Footer/Footer';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div>
@@ -39,7 +40,8 @@ const App = (props) => {
               <Route path='/reports' component={Reports} />
 
               <Route exact path="/" component={Main} />
-              <Route path='/news' component={News} />
+              {/* <Route path='/news' component={News} /> */}
+              <Route path='/news' render={ () => <News addNewsDate={props.addNewsDate}/>} />
               <Route path='/activity' component={Activity} />
               <Route path='/analytics' component={Analytics} />
               <Route path='/ourFilms' component={OurFilms} />
