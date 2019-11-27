@@ -41,7 +41,7 @@ const App = (props) => {
 
               <Route exact path="/" component={Main} />
               {/* <Route path='/news' component={News} /> */}
-              <Route path='/news' render={ () => <News addNewsDate={props.addNewsDate}/>} />
+              <Route path='/news' render={ () => <News state={props.state.newsPage}/>} />
               <Route path='/activity' component={Activity} />
               <Route path='/analytics' component={Analytics} />
               <Route path='/ourFilms' component={OurFilms} />
