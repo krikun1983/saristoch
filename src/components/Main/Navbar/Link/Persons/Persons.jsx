@@ -8,7 +8,15 @@ import {NavLink} from 'react-router-dom';
 const Persons = (props) => {
     let personsElements =  props.state.addPersonDate.map( d => <PersonItem name={d.name} id={d.id} />  );
     let messagesElements = props.state.addMessagesDate.map( m => <Message message={m.message}/> );
-  return (
+  
+    let newPersonElement = React.createRef();
+
+    let addPerson = () => {
+      let text = newPersonElement.current.value;
+      alert(text);
+    }
+
+    return (
     <div>
       <h3 className={s.h3}>Персоны</h3>
       {/* <PersonItem name='Муратов Сергей' id='1'/>
@@ -16,10 +24,10 @@ const Persons = (props) => {
       <PersonItem name='Перекальский Евгений' id='3'/> */}
       <div>
         <div>
-          <textarea></textarea>
+        <textarea ref={ newPersonElement }></textarea>
         </div>
         <div>
-          <button>Добавить сообщение</button>
+          <button onClick={ addPerson }>Добавить сообщение</button>
         </div>
       </div>
       <div className={s.messages}>
