@@ -12,7 +12,8 @@ import Main from './components/Nav/Link/Main';
 import News from './components/Nav/Link/News';
 import Activity from './components/Nav/Link/Activity';
 import OurFilms from './components/Nav/Link/OurFilms';
-import QuestionAnswer from './components/Main/Navbar/Link/QuestionAnswer';
+import Questions from './components/Main/Navbar/Link/Questions/Questions';
+import Persons from './components/Main/Navbar/Link/Persons/Persons';
 import Gallery from './components/Nav/Link/Gallery';
 import Regions from './components/Nav/Link/Regions';
 import Analytics from './components/Nav/Link/Analytics';
@@ -48,7 +49,8 @@ const App = (props) => {
               <Route path='/gallery' component={Gallery} />
               <Route path='/regions' component={Regions} />
 
-              <Route path='/questionAnswer' component={QuestionAnswer} />
+              <Route path='/questions' render={ () => <Questions state={props.state.questionsPage}/>} />
+              <Route path='/persons' render={ () => <Persons state={props.state.personsPage}/>} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />
             </div>
