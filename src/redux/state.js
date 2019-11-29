@@ -1,4 +1,4 @@
-import {renderEntireTree} from '../render'
+let renderEntireTree = () => {}
 
 let state = {
   newsPage: {
@@ -43,7 +43,7 @@ let state = {
   sidebar: {}
 };
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: 5, 
     message: state.questionsPage.newPostText, 
@@ -54,7 +54,7 @@ export let addPost = () => {
   renderEntireTree(state);
 };
 
-export let addQuestion = () => {
+export const addQuestion = () => {
   let newQuestion = {
     id: 5, 
     message: state.questionsPage.newQuestionText, 
@@ -65,15 +65,19 @@ export let addQuestion = () => {
   renderEntireTree(state);
 };
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.questionsPage.newPostText = newText;
   renderEntireTree(state);
 };
 
-export let updateNewQuestionText = (newText) => {
+export const updateNewQuestionText = (newText) => {
   state.questionsPage.newQuestionText = newText;
   renderEntireTree(state);
 };
+
+export const subscribe = (observer) => {
+  renderEntireTree = observer;
+}
 
 
 export default state;
