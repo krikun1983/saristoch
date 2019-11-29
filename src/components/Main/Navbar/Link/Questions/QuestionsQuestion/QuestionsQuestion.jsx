@@ -8,18 +8,23 @@ const QuestionsQuestion = (props) => {
     let newQuestionElement = React.createRef();
 
     let addQuestion = () => {
+        props.addQuestion();
+        props.updateNewQuestionText('');
+    }
+
+    let onQuestionChange = () => {
         let text = newQuestionElement.current.value;
-        props.addQuestion(text );
-        newQuestionElement.current.value = '';
+        props.updateNewQuestionText(text);
     }
 
     return (
         <div>
             <div className={s.postsBlock__textarea}>
-                <textarea ref={ newQuestionElement } placeholder="Вы можете задать вопрос здесь" cols="50" rows="5" maxlength="1000"></textarea>
+                <textarea onChange={ onQuestionChange } ref={ newQuestionElement } value={ props.newQuestionText } 
+                placeholder="Вы можете задать вопрос здесь" cols="50" rows="5" maxlength="1000"/>
             </div>
             <div className={s.postsBlock__button}>
-            <   button onClick={ addQuestion }>Задать вопрос</button>
+            <button onClick={ addQuestion }>Задать вопрос</button>
             </div>
             <div>{ questionElements }</div>
         </div>

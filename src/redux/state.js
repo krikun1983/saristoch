@@ -20,6 +20,8 @@ let state = {
       {id: 3, message: 'Где беженцы', likesCount: 11},
       {id: 4, message: 'Сколько весит кг хлопка?', likesCount: 11}
     ],
+    newPostText: 'saristoch.ru',
+    newQuestionText: 'Неужели забыли вопрос',
   },
   personsPage: {
     addPersonDate: [
@@ -41,20 +43,37 @@ let state = {
   sidebar: {}
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
-    id: 5, message: postMessage, likesCount: 0,
+    id: 5, 
+    message: state.questionsPage.newPostText, 
+    likesCount: 0,
   };
   state.questionsPage.addQuestionDate.push(newPost);
+  state.questionsPage.newPostText = '';
   renderEntireTree(state);
 };
 
-export let addQuestion = (postMessage) => {
+export let addQuestion = () => {
   let newQuestion = {
-    id: 5, message: postMessage, likesCount: 0,
+    id: 5, 
+    message: state.questionsPage.newQuestionText, 
+    likesCount: 0,
   };
   state.questionsPage.addQuestionDate2.push(newQuestion);
+  state.questionsPage.newQuestionText = '';
   renderEntireTree(state);
 };
+
+export let updateNewPostText = (newText) => {
+  state.questionsPage.newPostText = newText;
+  renderEntireTree(state);
+};
+
+export let updateNewQuestionText = (newText) => {
+  state.questionsPage.newQuestionText = newText;
+  renderEntireTree(state);
+};
+
 
 export default state;

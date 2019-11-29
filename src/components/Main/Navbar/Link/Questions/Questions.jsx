@@ -10,9 +10,19 @@ const Questions = (props) => {
       <h3 className={s.h3}>Вопрос-ответ</h3>
       <div className={s.post}>
         <div>
-            <QuestionsQuestion addQuestionDate2={props.state.addQuestionDate2} addQuestion={props.addQuestion} />
+            <QuestionsQuestion 
+                        addQuestionDate2={props.questionsPage.addQuestionDate2} 
+                        newQuestionText={props.questionsPage.newQuestionText}
+                        addQuestion={props.addQuestion} 
+
+                        updateNewQuestionText={props.updateNewQuestionText}/>
             <QuestionsInfo/>
-            <QuestionsPosts addQuestionDate={props.state.addQuestionDate} addPost={props.addPost}/>
+            <QuestionsPosts 
+                        addQuestionDate={props.questionsPage.addQuestionDate} 
+                        newPostText={props.questionsPage.newPostText}
+                        addPost={props.addPost}
+                        
+                        updateNewPostText={props.updateNewPostText}/>
         </div>
 
       </div>
