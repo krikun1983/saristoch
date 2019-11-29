@@ -9,18 +9,19 @@ const QuestionsPosts = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text );
+        props.addPost(text );
+        newPostElement.current.value = '';
     }
 
     return (
         <div className={s.postsBlock}>
-            <h3>My posts</h3>
+            <h4 className={s.h4}>Мои посты</h4>
             <div>
-                <div>
-                    <textarea ref={ newPostElement }></textarea>
+                <div className={s.postsBlock__textarea}>
+                    <textarea ref={ newPostElement } placeholder="Опишите, что вы думаете" cols="50" rows="5" maxlength="500"></textarea>
                 </div>
-                <div>
-                <button onClick={ addPost }>Задать вопрос2</button>
+                <div className={s.postsBlock__button}>
+                    <button onClick={ addPost }>Добавить пост</button>
                 </div>
             </div>
             <div className={s.posts}>

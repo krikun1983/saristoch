@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Post.module.css';
+import s from './Question.module.css';
 
-const Post = (props) => {
+const Question = (props) => {
   return (
     <div className={s.item}>
       <div className={s.item__img}>
@@ -17,4 +17,4 @@ const Post = (props) => {
   )
 }
 
-export default Post;
+export default Question;

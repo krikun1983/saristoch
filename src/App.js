@@ -49,7 +49,7 @@ const App = (props) => {
               <Route path='/gallery' component={Gallery} />
               <Route path='/regions' component={Regions} />
 
-              <Route path='/questions' render={ () => <Questions state={props.state.questionsPage}/>} />
+              <Route path='/questions' render={ () => <Questions state={props.state.questionsPage} addPost={props.addPost} addQuestion={props.addQuestion}/>} />
               <Route path='/persons' render={ () => <Persons state={props.state.personsPage}/>} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />

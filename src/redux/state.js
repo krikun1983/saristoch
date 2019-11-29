@@ -1,3 +1,5 @@
+import {renderEntireTree} from '../render'
+
 let state = {
   newsPage: {
     addNewsDate: [
@@ -11,7 +13,13 @@ let state = {
       {id: 2, message: 'It\'s my first post', likesCount: 11},
       {id: 3, message: 'Blabla', likesCount: 11},
       {id: 4, message: 'Dada', likesCount: 11}
-    ]
+    ],
+    addQuestionDate2: [
+      {id: 1, message: 'Как дела', likesCount: 12},
+      {id: 2, message: 'Почем нынче верстка', likesCount: 11},
+      {id: 3, message: 'Где беженцы', likesCount: 11},
+      {id: 4, message: 'Сколько весит кг хлопка?', likesCount: 11}
+    ],
   },
   personsPage: {
     addPersonDate: [
@@ -31,6 +39,22 @@ let state = {
     ],
   },
   sidebar: {}
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 5, message: postMessage, likesCount: 0,
+  };
+  state.questionsPage.addQuestionDate.push(newPost);
+  renderEntireTree(state);
+};
+
+export let addQuestion = (postMessage) => {
+  let newQuestion = {
+    id: 5, message: postMessage, likesCount: 0,
+  };
+  state.questionsPage.addQuestionDate2.push(newQuestion);
+  renderEntireTree(state);
 };
 
 export default state;
