@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './QuestionsQuestion.module.css';
 import Question from './Question/Question';
+import {addQuestionActionCreator, updateNewQuestionTextActionCreator} from '../../../../../../redux/state';
 
 const QuestionsQuestion = (props) => {
     let questionElements = props.addQuestionDate2.map( q => <Question message={q.message} likesCount={q.likesCount}/>);
@@ -8,12 +9,12 @@ const QuestionsQuestion = (props) => {
     let newQuestionElement = React.createRef();
 
     let addQuestion = () => {
-        props.dispatch({type: 'ADD-QUESTION'});
+        props.dispatch(addQuestionActionCreator());
     }
 
     let onQuestionChange = () => {
         let text = newQuestionElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-QUESTION-TEXT', newText: text});
+        props.dispatch(updateNewQuestionTextActionCreator(text));
     }
 
     return (

@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_QUESTION = 'ADD-QUESTION';
+const UPDATE_NEW_QUESTION_TEXT = 'UPDATE-NEW-QUESTION-TEXT';
+
 let store = {
   _state: {
     newsPage: {
@@ -80,6 +85,16 @@ let store = {
     }
   },
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST,})
+export const updateNewPostTextActionCreator = (text) => ({
+      type: UPDATE_NEW_POST_TEXT, 
+      newText: text,})
+
+export const addQuestionActionCreator = () => ({type: ADD_QUESTION,})
+export const updateNewQuestionTextActionCreator = (text) => ({
+      type: UPDATE_NEW_QUESTION_TEXT, 
+      newText: text,})
 
 export default store;
 window.store = store;
