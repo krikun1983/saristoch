@@ -13,16 +13,12 @@ const Questions = (props) => {
             <QuestionsQuestion 
                         addQuestionDate2={props.questionsPage.addQuestionDate2} 
                         newQuestionText={props.questionsPage.newQuestionText}
-                        addQuestion={props.addQuestion} 
-
-                        updateNewQuestionText={props.updateNewQuestionText}/>
+                        dispatch={props.dispatch} />
             <QuestionsInfo/>
             <QuestionsPosts 
                         addQuestionDate={props.questionsPage.addQuestionDate} 
                         newPostText={props.questionsPage.newPostText}
-                        addPost={props.addPost}
-                        
-                        updateNewPostText={props.updateNewPostText}/>
+                        dispatch={props.dispatch}/>
         </div>
 
       </div>

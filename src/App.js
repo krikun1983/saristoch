@@ -51,10 +51,7 @@ const App = (props) => {
 
               <Route path='/questions' render={ () => <Questions 
                                                               questionsPage={props.state.questionsPage} 
-                                                              addPost={props.addPost} 
-                                                              addQuestion={props.addQuestion}
-                                                              updateNewQuestionText={props.updateNewQuestionText}
-                                                              updateNewPostText={props.updateNewPostText}/>} />
+                                                              dispatch={props.dispatch}/>} />
               <Route path='/persons' render={ () => <Persons state={props.state.personsPage}/>} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />

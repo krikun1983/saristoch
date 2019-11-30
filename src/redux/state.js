@@ -41,42 +41,43 @@ let store = {
     },
     sidebar: {}
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     console.log('State');
   },
-  addPost() {
-    let newPost = {
-      id: 5, 
-      message: this._state.questionsPage.newPostText, 
-      likesCount: 0,
-    };
-    this._state.questionsPage.addQuestionDate.push(newPost);
-    this._state.questionsPage.newPostText = '';
-    this._callSubscriber(this._state);
-  },
-  addQuestion() {
-    let newQuestion = {
-      id: 5, 
-      message: this._state.questionsPage.newQuestionText, 
-      likesCount: 0,
-    };
-    this._state.questionsPage.addQuestionDate2.push(newQuestion);
-    this._state.questionsPage.newQuestionText = '';
-    this._callSubscriber(this._state);
-  },
-  updateNewPostText(newText) {
-    this._state.questionsPage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-  updateNewQuestionText(newText) {
-    this._state.questionsPage.newQuestionText = newText;
-    this._callSubscriber(this._state);
+
+  getState() {
+    return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 5, 
+        message: this._state.questionsPage.newPostText, 
+        likesCount: 0,
+      };
+      this._state.questionsPage.addQuestionDate.push(newPost);
+      this._state.questionsPage.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'ADD-QUESTION') {
+      let newQuestion = {
+        id: 5, 
+        message: this._state.questionsPage.newQuestionText, 
+        likesCount: 0,
+      };
+      this._state.questionsPage.addQuestionDate2.push(newQuestion);
+      this._state.questionsPage.newQuestionText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.questionsPage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-QUESTION-TEXT') {
+      this._state.questionsPage.newQuestionText = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
 }
 

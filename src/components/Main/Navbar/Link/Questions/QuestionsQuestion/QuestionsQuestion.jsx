@@ -8,13 +8,12 @@ const QuestionsQuestion = (props) => {
     let newQuestionElement = React.createRef();
 
     let addQuestion = () => {
-        props.addQuestion();
-        props.updateNewQuestionText('');
+        props.dispatch({type: 'ADD-QUESTION'});
     }
 
     let onQuestionChange = () => {
         let text = newQuestionElement.current.value;
-        props.updateNewQuestionText(text);
+        props.dispatch({type: 'UPDATE-NEW-QUESTION-TEXT', newText: text});
     }
 
     return (
