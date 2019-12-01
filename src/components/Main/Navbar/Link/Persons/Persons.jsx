@@ -8,19 +8,19 @@ import {NavLink} from 'react-router-dom';
 
 const Persons = (props) => {
 
-    let state = props.store.getState().personsPage;
+    let state = props.personsPage;
 
     let personsElements =  state.addPersonDate.map( d => <PersonItem name={d.name} id={d.id} />  );
     let messagesElements = state.addMessagesDate.map( m => <Message message={m.message}/> );
     let newMessageBody = state.newMessageBody;
     
     let onSendMessageClick = () => {
-      props.store.dispatch( sendMessageCreator() );
+      props.sendMessage();
     }
 
     let onNewMessageChange = (event) => {
       let body = event.target.value;
-      props.store.dispatch( updateNewMessageBodyCreator(body) );
+      props.updateNewMessageBody(body);
     } 
 
     return (

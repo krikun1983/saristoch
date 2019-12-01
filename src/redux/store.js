@@ -5,16 +5,10 @@ import newsReducer from './news-reducer';
 
 let store = {
   _state: {
-    newsPage: {
-      addNewsDate: [
-        { h2: 'Семинар с иммигрантами из Таджикистана', id: 1, entry: 'В нашей общественной приемной иммигранты из Таджикистана частые гости. Практически в ежедневном режиме поддерживаем связь с руководителем Таджикского национально-культурного центра «Дусти» Истатхон Саломовой. Земляки уважительно называю ее «Роиса», что в переводе означает уважительное «наш лидер».',},
-        { h2: 'В Саратовском отделении Изборского клуба обсудили роль ООН в современном мире', id: 2, entry: '22 ноября 2019 г. в Русском подворье «Национальной деревни народов Саратовской области» состоялось заседание Саратовского отделения Изборского клуба, посвященное проблемам народной дипломатии и роли ООН в налаживании равноправных и доверительных отношений в мире.',},
-    ],
-    },
     questionsPage: {
       addQuestionDate: [
         {id: 1, message: 'Hi, how are you?', likesCount: 12},
-        {id: 2, message: 'It\'s my first post', likesCount: 11},
+        {id: 2, message: 'It s my first post', likesCount: 11},
         {id: 3, message: 'Blabla', likesCount: 11},
         {id: 4, message: 'Dada', likesCount: 11}
       ],
@@ -45,6 +39,12 @@ let store = {
       ],
       newMessageBody: '',
     },
+    newsPage: {
+      addNewsDate: [
+        { h2: 'Семинар с иммигрантами из Таджикистана', id: 1, entry: 'В нашей общественной приемной иммигранты из Таджикистана частые гости. Практически в ежедневном режиме поддерживаем связь с руководителем Таджикского национально-культурного центра «Дусти» Истатхон Саломовой. Земляки уважительно называю ее «Роиса», что в переводе означает уважительное «наш лидер».',},
+        { h2: 'В Саратовском отделении Изборского клуба обсудили роль ООН в современном мире', id: 2, entry: '22 ноября 2019 г. в Русском подворье «Национальной деревни народов Саратовской области» состоялось заседание Саратовского отделения Изборского клуба, посвященное проблемам народной дипломатии и роли ООН в налаживании равноправных и доверительных отношений в мире.',},
+    ],
+    },
     sidebar: {}
   },
   _callSubscriber() {
@@ -63,8 +63,8 @@ let store = {
 
     this._state.questionsPage = questionsReducer(this._state.questionsPage, action);
     this._state.personsPage = personsReducer(this._state.personsPage, action);
-    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
     this._state.newsPage = newsReducer(this._state.newsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
     this._callSubscriber(this._state);
   },

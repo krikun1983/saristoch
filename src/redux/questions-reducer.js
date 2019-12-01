@@ -22,18 +22,20 @@ let initialState = {
 
 const questionsReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_POST: let newPost = {
-            id: 5, 
-            message: state.newPostText, 
-            likesCount: 0,
+        case ADD_POST: 
+            let newPost = {
+                id: 5, 
+                message: state.newPostText, 
+                likesCount: 0,
             };
             state.addQuestionDate.push(newPost);
             state.newPostText = '';
             return state;
-        case ADD_QUESTION: let newQuestion = {
-            id: 5, 
-            message: state.newQuestionText, 
-            likesCount: 0,
+        case ADD_QUESTION: 
+            let newQuestion = {
+                id: 5, 
+                message: state.newQuestionText, 
+                likesCount: 0,
             };
             state.addQuestionDate2.push(newQuestion);
             state.newQuestionText = '';
