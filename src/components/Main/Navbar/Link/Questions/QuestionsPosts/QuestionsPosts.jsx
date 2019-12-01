@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './QuestionsPosts.module.css';
 import Post from './Post/Post';
-import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../../../../redux/state';
+import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../../../../redux/questions-reducer';
 
 const QuestionsPosts = (props) => {
     let postsElements = props.addQuestionDate.map( p => <Post message={p.message} likesCount={p.likesCount}/>);

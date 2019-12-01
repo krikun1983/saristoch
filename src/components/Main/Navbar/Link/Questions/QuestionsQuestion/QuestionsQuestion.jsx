@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './QuestionsQuestion.module.css';
 import Question from './Question/Question';
-import {addQuestionActionCreator, updateNewQuestionTextActionCreator} from '../../../../../../redux/state';
+import {addQuestionActionCreator, updateNewQuestionTextActionCreator} from '../../../../../../redux/questions-reducer';
 
 const QuestionsQuestion = (props) => {
     let questionElements = props.addQuestionDate2.map( q => <Question message={q.message} likesCount={q.likesCount}/>);

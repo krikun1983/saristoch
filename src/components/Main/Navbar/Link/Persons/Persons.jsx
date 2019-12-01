@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Persons.module.css';
 import PersonItem from './PersonItem/PersonItem';
 import Message from './Message/Message';
-import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../../../redux/state';
+import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../../../redux/persons-reducer';
 import {NavLink} from 'react-router-dom';
 
 
