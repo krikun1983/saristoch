@@ -25,7 +25,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 const App = (props) => {
 
   return (
-    <BrowserRouter>
       <div>
         <Header />
         <Nav />
@@ -52,7 +51,7 @@ const App = (props) => {
               <Route path='/questions' render={ () => <Questions 
                                                               questionsPage={props.state.questionsPage} 
                                                               dispatch={props.dispatch}/>} />
-              <Route path='/persons' render={ () => <Persons state={props.state.personsPage}/>} />
+              <Route path='/persons' render={ () => <Persons store={props.store} />} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />
             </div>
@@ -60,7 +59,6 @@ const App = (props) => {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
   );
 }
 

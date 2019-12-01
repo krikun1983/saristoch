@@ -2,6 +2,8 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_QUESTION = 'ADD-QUESTION';
 const UPDATE_NEW_QUESTION_TEXT = 'UPDATE-NEW-QUESTION-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
   _state: {
@@ -43,6 +45,7 @@ let store = {
         {id: 4, message: 'Yo'},
         {id: 5, message: 'Yo'}
       ],
+      newMessageBody: '',
     },
     sidebar: {}
   },
@@ -51,6 +54,7 @@ let store = {
   },
 
   getState() {
+    debugger;
     return this._state;
   },
   subscribe(observer) {
@@ -58,7 +62,7 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
+    if (action.type === ADD_POST) {
       let newPost = {
         id: 5, 
         message: this._state.questionsPage.newPostText, 
@@ -67,7 +71,7 @@ let store = {
       this._state.questionsPage.addQuestionDate.push(newPost);
       this._state.questionsPage.newPostText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'ADD-QUESTION') {
+    } else if (action.type === ADD_QUESTION) {
       let newQuestion = {
         id: 5, 
         message: this._state.questionsPage.newQuestionText, 
@@ -76,11 +80,19 @@ let store = {
       this._state.questionsPage.addQuestionDate2.push(newQuestion);
       this._state.questionsPage.newQuestionText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.questionsPage.newPostText = action.newText;
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-QUESTION-TEXT') {
+    } else if (action.type === UPDATE_NEW_QUESTION_TEXT) {
       this._state.questionsPage.newQuestionText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.personsPage.newMessageBody = action.body;
+      this._callSubscriber(this._state);
+    } else if (action.type === SEND_MESSAGE) {
+      let body = this._state.personsPage.newMessageBody;
+      this._state.personsPage.newMessageBody = '';
+      this._state.personsPage.addMessagesDate.push({id: 6, message: body});
       this._callSubscriber(this._state);
     }
   },
@@ -88,13 +100,15 @@ let store = {
 
 export const addPostActionCreator = () => ({type: ADD_POST,})
 export const updateNewPostTextActionCreator = (text) => ({
-      type: UPDATE_NEW_POST_TEXT, 
-      newText: text,})
+      type: UPDATE_NEW_POST_TEXT, newText: text,})
 
 export const addQuestionActionCreator = () => ({type: ADD_QUESTION,})
 export const updateNewQuestionTextActionCreator = (text) => ({
-      type: UPDATE_NEW_QUESTION_TEXT, 
-      newText: text,})
+      type: UPDATE_NEW_QUESTION_TEXT, newText: text,})
+
+export const sendMessageCreator = () => ({type: SEND_MESSAGE,})
+export const updateNewMessageBodyCreator = (body) => ({
+      type: UPDATE_NEW_MESSAGE_BODY, body: body,})
 
 export default store;
 window.store = store;

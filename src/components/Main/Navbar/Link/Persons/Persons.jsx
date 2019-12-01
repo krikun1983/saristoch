@@ -1,35 +1,31 @@
 import React from 'react';
 import s from './Persons.module.css';
-import PersonItem from "./PersonItem/PersonItem";
-import Message from "./Message/Message";
+import PersonItem from './PersonItem/PersonItem';
+import Message from './Message/Message';
+import {sendMessageCreator, updateNewMessageBodyCreator} from '../../../../../redux/state';
 import {NavLink} from 'react-router-dom';
 
 
 const Persons = (props) => {
-    let personsElements =  props.state.addPersonDate.map( d => <PersonItem name={d.name} id={d.id} />  );
-    let messagesElements = props.state.addMessagesDate.map( m => <Message message={m.message}/> );
-  
-    let newPersonElement = React.createRef();
 
-    let addPerson = () => {
-      let text = newPersonElement.current.value;
-      alert(text);
+    let state = props.store.getState().personsPage;
+
+    let personsElements =  state.addPersonDate.map( d => <PersonItem name={d.name} id={d.id} />  );
+    let messagesElements = state.addMessagesDate.map( m => <Message message={m.message}/> );
+    let newMessageBody = state.newMessageBody;
+    
+    let onSendMessageClick = () => {
+      props.store.dispatch( sendMessageCreator() );
     }
+
+    let onNewMessageChange = (event) => {
+      let body = event.target.value;
+      props.store.dispatch( updateNewMessageBodyCreator(body) );
+    } 
 
     return (
     <div>
       <h3 className={s.h3}>Персоны</h3>
-      {/* <PersonItem name='Муратов Сергей' id='1'/>
-      <PersonItem name='Кутузов Василий' id='2'/>
-      <PersonItem name='Перекальский Евгений' id='3'/> */}
-      <div>
-        <div>
-        <textarea ref={ newPersonElement }></textarea>
-        </div>
-        <div>
-          <button onClick={ addPerson }>Добавить сообщение</button>
-        </div>
-      </div>
       <div className={s.messages}>
         <Message message='Добрый день!'/>
         <Message message='Ты вчера лег спать рано?'/>
@@ -40,7 +36,13 @@ const Persons = (props) => {
                 { personsElements }
             </div>
             <div className={s.messages}>
-                { messagesElements }
+                <div>{ messagesElements }</div>
+                <div>
+                  <div><textarea  value={ newMessageBody } 
+                                  onChange={ onNewMessageChange }
+                                  placeholder='Введите сообщение'></textarea></div>
+                  <div><button onClick={ onSendMessageClick }>Отправить</button></div>
+                </div>
             </div>
       </div>
     </div>
