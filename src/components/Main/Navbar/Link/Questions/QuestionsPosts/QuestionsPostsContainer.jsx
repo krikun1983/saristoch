@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         addQuestionDate: state.questionsPage.addQuestionDate,
-        // newPostText: state.questionsPage.newPostText,
+        newPostText: state.questionsPage.newPostText,
     }
 }
 

@@ -28,11 +28,11 @@ const questionsReducer = (state = initialState, action) => {
                 message: state.newPostText, 
                 likesCount: 0,
             };
-            let stateCopy = {...state};
-            stateCopy.addQuestionDate = [...state.addQuestionDate];
-            stateCopy.addQuestionDate.push(newPost);
-            stateCopy.newPostText = '';
-            return stateCopy;
+            return {
+                ...state,
+                addQuestionDate: [...state.addQuestionDate, newPost],
+                newPostText: '',
+            };
         }
         case ADD_QUESTION: {
             let newQuestion = {
@@ -40,23 +40,23 @@ const questionsReducer = (state = initialState, action) => {
                 message: state.newQuestionText, 
                 likesCount: 0,
             };
-            let stateCopy = {...state};
-            stateCopy.addQuestionDate2 = [...state.addQuestionDate2];
-            stateCopy.addQuestionDate2.push(newQuestion)
-            stateCopy.newQuestionText = '';
-            return stateCopy;
+            return {
+                ...state,
+                addQuestionDate2: [...state.addQuestionDate2, newQuestion],
+                newQuestionText: '',
+            };
         }
         case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.addQuestionDate = [...state.addQuestionDate];
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText,
+            };
         }
         case UPDATE_NEW_QUESTION_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.addQuestionDate2 = [...state.addQuestionDate2];
-            stateCopy.newQuestionText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newQuestionText: action.newText,
+            };
         }
         default:
             return state;

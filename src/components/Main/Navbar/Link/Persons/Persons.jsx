@@ -10,8 +10,8 @@ const Persons = (props) => {
 
     let state = props.personsPage;
 
-    let personsElements =  state.addPersonDate.map( d => <PersonItem name={d.name} id={d.id} />  );
-    let messagesElements = state.addMessagesDate.map( m => <Message message={m.message}/> );
+    let personsElements =  state.addPersonDate.map( d => <PersonItem name={d.name} key={d.id} id={d.id} />  );
+    let messagesElements = state.addMessagesDate.map( m => <Message message={m.message} key={m.id}/> );
     let newMessageBody = state.newMessageBody;
     
     let onSendMessageClick = () => {
