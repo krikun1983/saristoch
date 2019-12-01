@@ -1,24 +1,27 @@
 import React from 'react';
 import {addQuestionActionCreator, updateNewQuestionTextActionCreator} from '../../../../../../redux/questions-reducer';
 import QuestionsQuestion from './QuestionsQuestion';
+import {connect} from 'react-redux';
 
-
-const QuestionsQuestionContainer = (props) => {
-    let state = props.store.getState();
-
-    let addQuestion = () => {
-        props.store.dispatch(addQuestionActionCreator());
+const mapStateToProps = (state) => {
+    return {
+        addQuestionDate2: state.questionsPage.addQuestionDate2,
+        newQuestionText: state.questionsPage.newQuestionText,
     }
-
-    let onQuestionChange = (text) => {
-        let action = updateNewQuestionTextActionCreator(text);
-        props.store.dispatch(action);
-    }
-
-    return ( <QuestionsQuestion updateNewQuestionText={ onQuestionChange } 
-                                addQuestion={ addQuestion } 
-                                addQuestionDate2={state.questionsPage.addQuestionDate2} 
-                                newQuestionText={state.questionsPage.newQuestionText}/>)
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewQuestionText: (text) => {
+            let action = updateNewQuestionTextActionCreator(text);
+            dispatch(action);
+        },
+        addQuestion: () => {
+            dispatch(addQuestionActionCreator());
+        },
+    }
+}
+
+const QuestionsQuestionContainer = connect(mapStateToProps, mapDispatchToProps)(QuestionsQuestion);
 
 export default QuestionsQuestionContainer;

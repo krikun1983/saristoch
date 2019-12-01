@@ -10,9 +10,9 @@ const Questions = (props) => {
       <h3 className={s.h3}>Вопрос-ответ</h3>
       <div className={s.post}>
         <div>
-            <QuestionsQuestionContainer store={props.store}/>
+            <QuestionsQuestionContainer/>
             <QuestionsInfo/>
-            <QuestionsPostsContainer store={props.store} />
+            <QuestionsPostsContainer/>
         </div>
 
       </div>

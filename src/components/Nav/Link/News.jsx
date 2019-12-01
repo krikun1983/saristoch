@@ -3,8 +3,7 @@ import s from './News.module.css';
 import NewItem from '../../Main/Content/News/NewItem';
 
 const News = (props) => {
-  
-  let newsElements = props.state.addNewsDate.map(addNews => <NewItem h2={addNews.h2} id={addNews.id} entry={addNews.entry}/>);
+  let newsElements = props.addNewsDate.map(addNews => <NewItem h2={addNews.h2} id={addNews.id} entry={addNews.entry}/>);
 
   return (
     <div>

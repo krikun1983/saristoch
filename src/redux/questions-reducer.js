@@ -22,30 +22,42 @@ let initialState = {
 
 const questionsReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_POST: 
+        case ADD_POST: {
             let newPost = {
                 id: 5, 
                 message: state.newPostText, 
                 likesCount: 0,
             };
-            state.addQuestionDate.push(newPost);
-            state.newPostText = '';
-            return state;
-        case ADD_QUESTION: 
+            let stateCopy = {...state};
+            stateCopy.addQuestionDate = [...state.addQuestionDate];
+            stateCopy.addQuestionDate.push(newPost);
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+        case ADD_QUESTION: {
             let newQuestion = {
                 id: 5, 
                 message: state.newQuestionText, 
                 likesCount: 0,
             };
-            state.addQuestionDate2.push(newQuestion);
-            state.newQuestionText = '';
-            return state;
-        case UPDATE_NEW_POST_TEXT: 
-            state.newPostText = action.newText;
-            return state;
-        case UPDATE_NEW_QUESTION_TEXT: 
-            state.newQuestionText = action.newText;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.addQuestionDate2 = [...state.addQuestionDate2];
+            stateCopy.addQuestionDate2.push(newQuestion)
+            stateCopy.newQuestionText = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.addQuestionDate = [...state.addQuestionDate];
+            stateCopy.newPostText = action.newText;
+            return stateCopy;
+        }
+        case UPDATE_NEW_QUESTION_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.addQuestionDate2 = [...state.addQuestionDate2];
+            stateCopy.newQuestionText = action.newText;
+            return stateCopy;
+        }
         default:
             return state;
     }

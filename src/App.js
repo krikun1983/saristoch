@@ -9,7 +9,7 @@ import AboutUs from './components/Header/MenuTop/Link/AboutUs';
 import AboutProject from './components/Header/MenuTop/Link/AboutProject';
 import Reports from './components/Header/MenuTop/Link/Reports';
 import Main from './components/Nav/Link/Main';
-import News from './components/Nav/Link/News';
+import NewsContainer from './components/Nav/Link/NewsContainer';
 import Activity from './components/Nav/Link/Activity';
 import OurFilms from './components/Nav/Link/OurFilms';
 import Questions from './components/Main/Navbar/Link/Questions/Questions';
@@ -20,7 +20,7 @@ import Analytics from './components/Nav/Link/Analytics';
 import Law from './components/Main/Navbar/Link/Law';
 import Recommendations from './components/Main/Navbar/Link/Recommendations';
 import Footer from './components/Footer/Footer';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 const App = (props) => {
 
@@ -41,15 +41,15 @@ const App = (props) => {
 
               <Route exact path="/" component={Main} />
               {/* <Route path='/news' component={News} /> */}
-              <Route path='/news' render={ () => <News state={props.state.newsPage}/>} />
+              <Route path='/news' render={ () => <NewsContainer />} />
               <Route path='/activity' component={Activity} />
               <Route path='/analytics' component={Analytics} />
               <Route path='/ourFilms' component={OurFilms} />
               <Route path='/gallery' component={Gallery} />
               <Route path='/regions' component={Regions} />
 
-              <Route path='/questions' render={ () => <Questions store={props.store} />} />
-              <Route path='/persons' render={ () => <PersonsContainer store={props.store} />} />
+              <Route path='/questions' render={ () => <Questions />} />
+              <Route path='/persons' render={ () => <PersonsContainer />} />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />
             </div>
