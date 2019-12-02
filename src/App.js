@@ -14,6 +14,7 @@ import Activity from './components/Nav/Link/Activity';
 import OurFilms from './components/Nav/Link/OurFilms';
 import Questions from './components/Main/Navbar/Link/Questions/Questions';
 import PersonsContainer from './components/Main/Navbar/Link/Persons/PersonsContainer';
+import UsersContainer from './components/Main/Navbar/Link/Users/UsersContainer';
 import Gallery from './components/Nav/Link/Gallery';
 import Regions from './components/Nav/Link/Regions';
 import Analytics from './components/Nav/Link/Analytics';
@@ -48,8 +49,9 @@ const App = (props) => {
               <Route path='/gallery' component={Gallery} />
               <Route path='/regions' component={Regions} />
 
-              <Route path='/questions' render={ () => <Questions />} />
-              <Route path='/persons' render={ () => <PersonsContainer />} />
+              <Route path='/questions' render={ () => <Questions /> } />
+              <Route path='/persons' render={ () => <PersonsContainer /> } />
+              <Route path='/users' render={ () => <div><UsersContainer /></div> } />
               <Route path='/law' component={Law} />
               <Route path='/recommendations' component={Recommendations} />
             </div>
