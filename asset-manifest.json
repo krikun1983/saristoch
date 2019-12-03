@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/saristoch/static/css/main.02e96edc.chunk.css",
+    "main.js": "/saristoch/static/js/main.03f7a4b4.chunk.js",
+    "main.js.map": "/saristoch/static/js/main.03f7a4b4.chunk.js.map",
+    "runtime-main.js": "/saristoch/static/js/runtime-main.9547ff75.js",
+    "runtime-main.js.map": "/saristoch/static/js/runtime-main.9547ff75.js.map",
+    "static/js/2.c873d73f.chunk.js": "/saristoch/static/js/2.c873d73f.chunk.js",
+    "static/js/2.c873d73f.chunk.js.map": "/saristoch/static/js/2.c873d73f.chunk.js.map",
+    "index.html": "/saristoch/index.html",
+    "precache-manifest.454438b6b524714249af447f7dde581c.js": "/saristoch/precache-manifest.454438b6b524714249af447f7dde581c.js",
+    "service-worker.js": "/saristoch/service-worker.js",
+    "static/css/main.02e96edc.chunk.css.map": "/saristoch/static/css/main.02e96edc.chunk.css.map",
+    "static/media/Maps.module.css": "/saristoch/static/media/MapOfSarObl.1892a9b8.svg",
+    "static/media/avatar.jpg": "/saristoch/static/media/avatar.de6af0d1.jpg",
+    "static/media/gerbSarObl.svg": "/saristoch/static/media/gerbSarObl.81c038a8.svg",
+    "static/media/grantLogo.svg": "/saristoch/static/media/grantLogo.8dd4e9fd.svg",
+    "static/media/Header.module.css": "/saristoch/static/media/saristoch-fon.2aaa3a78.jpg",
+    "static/media/Logo.module.css": "/saristoch/static/media/saristoch-logo.52b1b2de.svg",
+    "static/media/user.png": "/saristoch/static/media/user.1897f975.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9547ff75.js",
+    "static/js/2.c873d73f.chunk.js",
+    "static/css/main.02e96edc.chunk.css",
+    "static/js/main.03f7a4b4.chunk.js"
+  ]
+}
